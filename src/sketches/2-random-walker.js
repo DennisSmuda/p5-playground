@@ -13,7 +13,10 @@ let randomWalker = (sk) => {
     sk.background(30);
 
     objects.push(new Walker(sk, width / 2, height / 2));
-    objects.push(new MouseWalker(sk, width / 3, height / 3));
+    objects.push(new Walker(sk, width / 2, height / 2));
+    objects.push(new Walker(sk, width / 2, height / 2));
+    objects.push(new Walker(sk, width / 4, height / 4));
+    // objects.push(new MouseWalker(sk, width / 3, height / 3));
   };
 
   sk.draw = () => {

@@ -4,15 +4,25 @@ export default class Walker {
     this.x = x;
     this.y = y;
     console.log("Make Walker", sk);
+    this.tx = Math.random() * 1000;
+    this.ty = Math.random() * 1000;
   }
 
   update() {
-    let stepX = Math.floor(this.sk.random(3) - 1);
-    let stepY = Math.floor(this.sk.random(3) - 1);
+    let stepX = this.sk.map(this.sk.noise(this.tx), 0, 1, 0, window.innerWidth);
+    let stepY = this.sk.map(
+      this.sk.noise(this.ty),
+      0,
+      1,
+      0,
+      window.innerHeight
+    );
 
-    this.x += stepX;
-    this.y += stepY;
+    this.x = stepX;
+    this.y = stepY;
     // console.log("Update", dir);
+    this.tx += 0.005;
+    this.ty += 0.005;
   }
 
   draw() {
