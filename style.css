@@ -3,8 +3,14 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #fff;
   margin-top: 60px;
+  position: relative;
+  z-index: 10;
+}
+
+p {
+  opacity: 0.65;
 }
 
 canvas {

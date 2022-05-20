@@ -9,7 +9,10 @@ export default class Mover {
     this.location = sk.createVector(x, y);
     this.accelleration = sk.createVector(0, 0);
     this.velocity = sk.createVector(0, 0);
-    this.maxSpeed = 10;
+    this.mouse = sk.createVector(0, 0);
+    this.dir = sk.createVector(0, 0);
+    this.maxSpeed = sk.random(9, 11);
+    this.color = sk.color(sk.random(0, 255), sk.random(99, 100), 50, 0.5);
 
     const { innerWidth: width, innerHeight: height } = window;
     this.width = width;
@@ -17,13 +20,19 @@ export default class Mover {
   }
 
   update() {
-    this.accelleration = p5.Vector.random2D().limit(0.1); // this.sk.P5.Vector.random2d();
+    this.mouse = this.sk.createVector(this.sk.mouseX, this.sk.mouseY);
+    this.dir = p5.Vector.sub(this.mouse, this.location);
+    this.dir.normalize();
+    this.dir.mult(0.5);
+    this.accelleration = this.dir;
     this.velocity.add(this.accelleration).limit(this.maxSpeed);
     this.location.add(this.velocity);
     this.checkEdges();
   }
 
   draw() {
+    this.sk.noStroke();
+    this.sk.fill(this.color);
     this.sk.ellipse(this.location.x, this.location.y, 16);
   }
 
