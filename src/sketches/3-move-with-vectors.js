@@ -25,6 +25,11 @@ const demoSketch = (sk) => {
       obj.draw();
     });
   };
+
+  sk.stop = () => {
+    console.log("Stop!"); // TODO: Might need more cleanup for memory - who cares though?
+    sk.noLoop();
+  };
 };
 
 const createSketch = () => new p5(demoSketch);

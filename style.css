@@ -4,9 +4,14 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #fff;
-  margin-top: 60px;
   position: relative;
   z-index: 10;
+  margin: 3rem;
+  line-height: 1.2;
+}
+
+*, *:after, *:before {
+  margin: 0;
 }
 
 p {
@@ -19,4 +24,52 @@ canvas {
   left: 0;
   margin: 0;
   padding: 0;
+}
+
+.navigation {
+  bottom: 2rem;
+  left: 1rem;
+  right: 1rem;
+  position: fixed;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button {
+  appearance: none;
+  border: none;
+  background-color: transparent;
+  color: white;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  height: 2rem;
+  border-radius: .5rem;
+  padding: 0.125rem .5rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+button:active {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+button svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+button span {
+  margin: 0 0.5rem;
+}
+
+@media screen and (min-width: 786px) {
+  html {
+    font-size: 24px;
+  }
 }
