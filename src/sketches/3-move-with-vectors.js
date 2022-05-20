@@ -8,7 +8,7 @@ const demoSketch = (sk) => {
     sk.createCanvas(width, height);
     sk.background(40);
     objects.push(new Mover(sk, width / 2, height / 2));
-    objects.push(new Mover(sk, width / 2, height / 2));
+    // objects.push(new Mover(sk, width / 2, height / 2));
   };
 
   sk.draw = () => {

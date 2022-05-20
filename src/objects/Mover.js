@@ -1,11 +1,15 @@
+import * as p5 from "p5";
+
+/**
+ * Mover Class
+ */
 export default class Mover {
   constructor(sk, x, y) {
     this.sk = sk;
     this.location = sk.createVector(x, y);
-    this.velocity = sk.createVector(
-      this.sk.random(-2, 2),
-      this.sk.random(-2, 2)
-    );
+    this.accelleration = sk.createVector(0, 0);
+    this.velocity = sk.createVector(0, 0);
+    this.maxSpeed = 10;
 
     const { innerWidth: width, innerHeight: height } = window;
     this.width = width;
@@ -13,6 +17,8 @@ export default class Mover {
   }
 
   update() {
+    this.accelleration = p5.Vector.random2D().limit(0.1); // this.sk.P5.Vector.random2d();
+    this.velocity.add(this.accelleration).limit(this.maxSpeed);
     this.location.add(this.velocity);
     this.checkEdges();
   }
