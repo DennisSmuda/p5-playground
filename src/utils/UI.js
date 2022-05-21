@@ -1,6 +1,10 @@
 import { sketches } from "../sketches";
 import setTitle from "./setTitle";
 
+/**
+ * UI Class
+ * @description handles all HTML-native UI states and events
+ */
 export default class UI {
   constructor() {
     this.nav = document.getElementById("nav");
