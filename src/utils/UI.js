@@ -44,7 +44,7 @@ export default class UI {
 
     // Click Event starts a sketch
     newButton.addEventListener("click", () => {
-      setTitle(sketch.name, sketch.description, sketch.instructions);
+      setTitle(sketch.name, sketch.instructions);
       window.dispatchEvent(
         new CustomEvent("startSketch", { detail: { sketch } })
       );
