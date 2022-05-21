@@ -3,6 +3,7 @@ import setTitle from "./setTitle";
 
 /**
  * UI Class
+ *
  * @description handles all HTML-native UI states and events
  */
 export default class UI {
@@ -10,6 +11,7 @@ export default class UI {
     this.nav = document.getElementById("nav");
     this.backButton = document.getElementById("back-button");
     this.playButtonsContainer = document.getElementById("playButtons");
+    this.newestSketchButton = null;
 
     this.setupButtons();
     this.openMenu();
@@ -41,6 +43,7 @@ export default class UI {
         <span class="play-button__description">${sketch.description}</span>
       `;
     this.playButtonsContainer.appendChild(newButton);
+    this.newestSketchButton = newButton;
 
     // Click Event starts a sketch
     newButton.addEventListener("click", () => {
@@ -64,5 +67,9 @@ export default class UI {
 
   resetTitle() {
     setTitle("welcome", "choose a sketch");
+  }
+
+  playLatest() {
+    this.newestSketchButton.click();
   }
 }

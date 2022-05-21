@@ -1,4 +1,4 @@
-import Mover from "../objects/Mover";
+import MouseMover from "../objects/MouseMover";
 
 const moverSketch = (sk) => {
   const objects = [];
@@ -8,11 +8,11 @@ const moverSketch = (sk) => {
     sk.background(200, 100, 50, 1);
     sk.colorMode("hsl");
 
-    objects.push(new Mover(sk, width / 3, height / 2));
-    objects.push(new Mover(sk, width / 2, height / 2));
-    objects.push(new Mover(sk, width / 2, height / 4));
-    objects.push(new Mover(sk, width / 2, height / 3));
-    objects.push(new Mover(sk, width - width / 4, height / 3));
+    objects.push(new MouseMover(sk, width / 3, height / 2));
+    objects.push(new MouseMover(sk, width / 2, height / 2));
+    objects.push(new MouseMover(sk, width / 2, height / 4));
+    objects.push(new MouseMover(sk, width / 2, height / 3));
+    objects.push(new MouseMover(sk, width - width / 4, height / 3));
   };
 
   sk.draw = () => {

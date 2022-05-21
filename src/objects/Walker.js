@@ -1,3 +1,5 @@
+import { getRandomColor } from "../utils/colors";
+
 /**
  * Walker Class
  * -- "Walks across a 2d noise function"
@@ -9,12 +11,7 @@ export default class Walker {
     this.y = y;
     this.tx = Math.random() * 1000;
     this.ty = Math.random() * 1000;
-    this.color = this.sk.color(
-      this.sk.random(255),
-      this.sk.random(100),
-      // this.sk.random(50)
-      50
-    );
+    this.color = getRandomColor(sk);
   }
 
   update() {
