@@ -3,7 +3,6 @@ export default class Walker {
     this.sk = sk;
     this.x = x;
     this.y = y;
-    console.log("Make Walker", this.x);
   }
 
   update() {
@@ -31,15 +30,11 @@ export default class Walker {
         this.y -= 1;
       }
     }
-    // console.log("Update", mouseStepX, mouseStepY);
   }
 
   draw() {
-    // console.log("Draw Circle");
     this.sk.stroke("white");
     this.sk.strokeWeight(2);
-
     this.sk.point(this.x, this.y);
-    // this.sk.ellipse(this.x, this.y, 64);
   }
 }

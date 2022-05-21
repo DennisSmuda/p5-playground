@@ -18,23 +18,7 @@ export default class UI {
   setupButtons() {
     // Create Playbuttons
     sketches.forEach((sketch, i) => {
-      const newButton = document.createElement("button");
-      newButton.classList = "play-button";
-      newButton.innerHTML = `
-        <span class="play-button__name">${++i}&nbsp; ${sketch.name}</span>
-        <span class="play-button__description">${sketch.description}</span>
-      `;
-      this.playButtonsContainer.appendChild(newButton);
-      console.log("playbutton", this.playButtonsContainer);
-      // this.playButtons.append(newButton)
-      newButton.addEventListener("click", () => {
-        // console.log("Play Button", sketch);
-        setTitle(sketch.name, sketch.description, sketch.instructions);
-        window.dispatchEvent(
-          new CustomEvent("startSketch", { detail: { sketch } })
-        );
-        this.closeMenu();
-      });
+      this.createButtonForSketch(sketch, i);
     });
 
     // Back Button
@@ -42,6 +26,25 @@ export default class UI {
       this.openMenu();
       window.dispatchEvent(new CustomEvent("stopSketch"));
       this.resetTitle();
+    });
+  }
+
+  createButtonForSketch(sketch, i) {
+    const newButton = document.createElement("button");
+    newButton.classList = "play-button";
+    newButton.innerHTML = `
+        <span class="play-button__name">${++i}&nbsp;${sketch.name}</span>
+        <span class="play-button__description">${sketch.description}</span>
+      `;
+    this.playButtonsContainer.appendChild(newButton);
+
+    // Click Event starts a sketch
+    newButton.addEventListener("click", () => {
+      setTitle(sketch.name, sketch.description, sketch.instructions);
+      window.dispatchEvent(
+        new CustomEvent("startSketch", { detail: { sketch } })
+      );
+      this.closeMenu();
     });
   }
 

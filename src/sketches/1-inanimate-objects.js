@@ -11,8 +11,6 @@ let inanimateObjectsSketch = (sk) => {
     sk.background(40);
 
     objects.push(new Circle(sk, width / 2, height / 2));
-
-    // console.log("sk", sk);
   };
 
   sk.draw = () => {

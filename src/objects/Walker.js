@@ -1,9 +1,12 @@
+/**
+ * Walker Class
+ * -- "Walks across a 2d noise function"
+ */
 export default class Walker {
   constructor(sk, x, y) {
     this.sk = sk;
     this.x = x;
     this.y = y;
-    console.log("Make Walker", sk);
     this.tx = Math.random() * 1000;
     this.ty = Math.random() * 1000;
     this.color = this.sk.color(
@@ -32,11 +35,9 @@ export default class Walker {
   }
 
   draw() {
-    // console.log("Draw Circle");
     this.sk.stroke(this.color);
     this.sk.strokeWeight(2);
 
     this.sk.point(this.x, this.y);
-    // this.sk.ellipse(this.x, this.y, 64);
   }
 }

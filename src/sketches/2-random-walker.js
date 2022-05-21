@@ -1,4 +1,4 @@
-import * as p5 from "p5";
+import p5 from "p5";
 
 import Walker from "../objects/Walker";
 
@@ -20,21 +20,20 @@ let randomWalker = (sk) => {
   };
 
   sk.draw = () => {
-    // sk.background(200, 100, 50, 1);
     objects.forEach((obj) => {
       obj.update();
       obj.draw();
     });
 
     sk.mousePressed = () => {
-      // sk.colorMode("rgb");
-      console.log("jo");
+      // console.log("jo");
       sk.background(256, 22, 10, 1);
     };
   };
 
   sk.stop = () => {
     sk.noLoop();
+    sk.mousePressed = null;
   };
 };
 

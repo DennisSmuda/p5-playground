@@ -6,16 +6,11 @@ export default class Circle {
     this.sk = sk;
     this.x = x;
     this.y = y;
-    console.log("Make Circle");
   }
 
-  update() {
-    // this.x += 1;
-    // console.log("Update Circle");
-  }
+  update() {}
 
   draw() {
-    // console.log("Draw Circle");
     this.sk.ellipse(this.x, this.y, 64);
   }
 }
