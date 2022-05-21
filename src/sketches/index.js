@@ -18,12 +18,12 @@ const sketches = [
     instructions: "move your mouse around",
     sketch: moverSketch,
   },
-  {
-    name: "forces",
-    description: "moved by forces",
-    instructions: "move your mouse around",
-    sketch: forceSketch,
-  },
+  // {
+  //   name: "forces",
+  //   description: "moved by forces",
+  //   instructions: "move your mouse around",
+  //   sketch: forceSketch,
+  // },
 ];
 
 export { sketches };

@@ -19,8 +19,8 @@ const forceSketch = (sk) => {
     flashBackground(sk);
 
     movers.forEach((mover) => {
-      mover.update();
       mover.applyForce(gravity);
+      mover.update();
       mover.draw();
     });
   };

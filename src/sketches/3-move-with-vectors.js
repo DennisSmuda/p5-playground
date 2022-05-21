@@ -12,6 +12,8 @@ const moverSketch = (sk) => {
     objects.push(new MouseMover(sk, width / 2, height / 2));
     objects.push(new MouseMover(sk, width / 2, height / 4));
     objects.push(new MouseMover(sk, width / 2, height / 3));
+    objects.push(new MouseMover(sk, width / 2, height / 3));
+    objects.push(new MouseMover(sk, width, height));
     objects.push(new MouseMover(sk, width - width / 4, height / 3));
   };
 
