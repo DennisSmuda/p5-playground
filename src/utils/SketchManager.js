@@ -12,9 +12,8 @@ export default class SketchManager {
     window.addEventListener("startSketch", async (e) => {
       console.log("Start Sketch", e);
       // this.currentSketch = createSketch();
-      const sketch = await import(`../sketches/${e.detail.sketch.path}`);
-      console.log("Sketch? ", sketch);
-      this.currentSketch = sketch.createSketch();
+      // const sketch = await import(`../sketches/${e.detail.sketch.path}`);
+      this.currentSketch = e.detail.sketch.create();
     });
 
     /**
