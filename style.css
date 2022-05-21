@@ -44,6 +44,7 @@ a {
 *:after,
 *:before {
   margin: 0;
+  box-sizing: border-box;
 }
 
 p {
@@ -60,7 +61,8 @@ canvas {
 
 .navigation {
   top: 1rem;
-  left: 1rem;
+  left: 0rem;
+  right: 0;
   position: fixed;
   z-index: 20;
   display: flex;
@@ -69,15 +71,44 @@ canvas {
 }
 
 .back-button {
+  position: fixed;
+  z-index: 30;
+  left: 1rem;
   margin: 0rem auto 0;
+  font-weight: 900;
 }
 
 .play-buttons {
-  margin: 7rem auto 0;
+  margin: 6rem auto 0;
   display: flex;
   grid-template-columns: 1fr;
+  grid-auto-flow: row;
+  grid-auto-rows: 3rem; // play with this to change height of the children, 50% will fill half
+  /* grid-template-columns: unset; // do not set template columns and rows */
+  grid-template-rows: unset;
+  overflow: scroll;
+
+  height: calc(100vh - 11rem);
+  /* overflow: auto; */
+  width: 100%;
 
   gap: 1rem;
+  padding: 1rem;
+}
+@media screen and (min-width: 786px) {
+  .play-buttons {
+    grid-auto-rows: 15%;
+    grid-template-columns: minmax(250px, 1fr) minmax(250px, 1fr);
+  }
+}
+@media screen and (min-width: 1024px) {
+  .play-buttons {
+    grid-auto-rows: 15%;
+    grid-template-columns: minmax(250px, 1fr) minmax(250px, 1fr) minmax(
+        250px,
+        1fr
+      );
+  }
 }
 
 button {
@@ -111,6 +142,7 @@ a.button span {
   align-items: start;
   background-color: rgba(255, 255, 255, 0.03);
   padding: 1rem 1rem;
+  min-height: 3rem;
 }
 
 .play-button__name {
