@@ -1,4 +1,5 @@
 // import p5 from "p5";
+import { flashBackground } from "../utils/colors";
 
 import Walker from "../objects/Walker";
 
@@ -8,8 +9,8 @@ let walkerSketch = (sk) => {
 
   sk.setup = () => {
     sk.createCanvas(width, height);
-    sk.background(200, 100, 50, 1);
-    sk.colorMode("hsl");
+    // sk.colorMode("hsl");
+    flashBackground(sk);
 
     objects.push(new Walker(sk, width / 2, height / 2));
     objects.push(new Walker(sk, width / 2, height / 2));
@@ -20,7 +21,7 @@ let walkerSketch = (sk) => {
   };
 
   sk.mousePressed = () => {
-    sk.background(256, 22, 10, 1);
+    flashBackground(sk);
   };
 
   sk.draw = () => {

@@ -1,5 +1,3 @@
-import * as p5 from "p5";
-
 import Circle from "../objects/Circle";
 
 let inanimateObjectsSketch = (sk) => {
@@ -21,6 +19,4 @@ let inanimateObjectsSketch = (sk) => {
   };
 };
 
-const createSketch = () => new p5(inanimateObjectsSketch);
-
-export { createSketch };
+export { inanimateObjectsSketch };
