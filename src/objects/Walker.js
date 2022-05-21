@@ -6,6 +6,12 @@ export default class Walker {
     console.log("Make Walker", sk);
     this.tx = Math.random() * 1000;
     this.ty = Math.random() * 1000;
+    this.color = this.sk.color(
+      this.sk.random(255),
+      this.sk.random(100),
+      // this.sk.random(50)
+      50
+    );
   }
 
   update() {
@@ -27,7 +33,7 @@ export default class Walker {
 
   draw() {
     // console.log("Draw Circle");
-    this.sk.stroke("white");
+    this.sk.stroke(this.color);
     this.sk.strokeWeight(2);
 
     this.sk.point(this.x, this.y);

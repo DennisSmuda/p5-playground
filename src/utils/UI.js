@@ -18,7 +18,6 @@ export default class UI {
   setupButtons() {
     // Create Playbuttons
     sketches.forEach((sketch) => {
-      console.log("Jjoo", sketch);
       const newButton = document.createElement("button");
       newButton.classList = "play-button";
       newButton.innerHTML = `
@@ -33,22 +32,13 @@ export default class UI {
       // this.playButtons.append(newButton)
       newButton.addEventListener("click", () => {
         console.log("Play Button", sketch);
+        setTitle(sketch.name, sketch.description);
         window.dispatchEvent(
           new CustomEvent("startSketch", { detail: { sketch } })
         );
         this.closeMenu();
       });
     });
-
-    // Start Button
-
-    // this.playButton.addEventListener("click", ({ target }) => {
-    //   console.log("Play Button", target);
-    //   window.dispatchEvent(
-    //     new CustomEvent("startSketch", { detail: { sketchName: "demo-123" } })
-    //   );
-    //   this.closeMenu();
-    // });
 
     // Back Button
     this.backButton.addEventListener("click", () => {
@@ -69,6 +59,6 @@ export default class UI {
   }
 
   resetTitle() {
-    setTitle("Select a Demo");
+    setTitle("menu", "choose a sketch");
   }
 }
