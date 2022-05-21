@@ -1,7 +1,6 @@
-import p5 from "p5";
 import Mover from "../objects/Mover";
 
-const demoSketch = (sk) => {
+const moverSketch = (sk) => {
   const objects = [];
   const { innerWidth: width, innerHeight: height } = window;
   sk.setup = () => {
@@ -30,6 +29,4 @@ const demoSketch = (sk) => {
   };
 };
 
-const createSketch = () => new p5(demoSketch);
-
-export { createSketch };
+export { moverSketch };

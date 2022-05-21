@@ -1,8 +1,8 @@
-import p5 from "p5";
+// import p5 from "p5";
 
 import Walker from "../objects/Walker";
 
-let randomWalker = (sk) => {
+let walkerSketch = (sk) => {
   const objects = [];
   const { innerWidth: width, innerHeight: height } = window;
 
@@ -19,16 +19,15 @@ let randomWalker = (sk) => {
     objects.push(new Walker(sk, 0, 0));
   };
 
+  sk.mousePressed = () => {
+    sk.background(256, 22, 10, 1);
+  };
+
   sk.draw = () => {
     objects.forEach((obj) => {
       obj.update();
       obj.draw();
     });
-
-    sk.mousePressed = () => {
-      // console.log("jo");
-      sk.background(256, 22, 10, 1);
-    };
   };
 
   sk.stop = () => {
@@ -37,6 +36,4 @@ let randomWalker = (sk) => {
   };
 };
 
-const createSketch = () => new p5(randomWalker);
-
-export { createSketch };
+export { walkerSketch };
