@@ -3,27 +3,13 @@
 // import { createSketch } from "./src/sketches/1-inanimate-objects";
 // import { createSketch } from "./src/sketches/2-random-walker";
 import { createSketch } from "./src/sketches/3-move-with-vectors";
+import SketchManager from "./src/utils/SketchManager";
 import UI from "./src/utils/UI";
 
-// Current Sketch
-let currentSketch = null;
-
 /**
- * Start Sketch Event
+ * Init Sketch Manager
  */
-window.addEventListener("startSketch", (e) => {
-  console.log("Start Sketch", e);
-  currentSketch = createSketch();
-});
-
-/**
- * Stop Sketch Event
- */
-window.addEventListener("stopSketch", (e) => {
-  currentSketch.stop();
-  currentSketch = null;
-  document.querySelector("canvas").remove();
-});
+const sketchManager = new SketchManager();
 
 /**
  * Init UI
