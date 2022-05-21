@@ -8,10 +8,12 @@ const demoSketch = (sk) => {
     sk.createCanvas(width, height);
     sk.background(200, 100, 50, 1);
     sk.colorMode("hsl");
+
     objects.push(new Mover(sk, width / 3, height / 2));
     objects.push(new Mover(sk, width / 2, height / 2));
     objects.push(new Mover(sk, width / 2, height / 4));
     objects.push(new Mover(sk, width / 2, height / 3));
+    objects.push(new Mover(sk, width - width / 4, height / 3));
   };
 
   sk.draw = () => {
@@ -24,7 +26,6 @@ const demoSketch = (sk) => {
   };
 
   sk.stop = () => {
-    console.log("Stop!"); // TODO: Might need more cleanup for memory - who cares though?
     sk.noLoop();
   };
 };

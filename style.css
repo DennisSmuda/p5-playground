@@ -1,13 +1,43 @@
-#app {
+html,
+* {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #fff;
-  position: relative;
-  z-index: 10;
-  margin: 3rem;
   line-height: 1.2;
+}
+
+html {
+  font-size: 20px;
+}
+
+@media screen and (min-width: 786px) {
+  html {
+    font-size: 24px;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  html {
+    font-size: 28px;
+  }
+}
+
+#app {
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  margin: 1rem;
+}
+
+h1 {
+  letter-spacing: -1.5px;
+  font-weight: 900;
+}
+
+a {
+  color: inherit;
 }
 
 *,
@@ -29,9 +59,8 @@ canvas {
 }
 
 .navigation {
-  bottom: 2rem;
+  top: 1rem;
   left: 1rem;
-  right: 1rem;
   position: fixed;
   z-index: 20;
   display: flex;
@@ -39,11 +68,14 @@ canvas {
   align-items: center;
 }
 
+.back-button {
+  margin: 0rem auto 0;
+}
+
 .play-buttons {
-  margin: auto;
+  margin: 7rem auto 0;
   display: flex;
-  grid-template: auto / 1;
-  grid-template-columns: 240px;
+  grid-template-columns: 1fr;
 
   gap: 1rem;
 }
@@ -56,33 +88,88 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 2rem;
+  cursor: pointer;
+  min-height: 2rem;
   border-radius: 0.5rem;
   padding: 0.125rem 0.5rem;
+}
+
+a.button {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
 }
 
+a.button span {
+  margin-left: 0.5em;
+}
+
+.play-button {
+  flex-direction: column;
+  align-items: start;
+  background-color: rgba(255, 255, 255, 0.03);
+  padding: 1rem 1rem;
+}
+
+.play-button__name {
+  font-size: 0.875rem;
+  font-weight: 900;
+  margin-bottom: 0.25rem;
+  white-space: nowrap;
+}
+
+.play-button__name:first-letter {
+  opacity: 0.65;
+  font-weight: initial;
+}
+
+.play-button__description {
+  font-size: 0.5rem;
+  display: block;
+  opacity: 0.65;
+  margin-left: 0.875rem;
+}
+
 button:hover {
-  background-color: rgba(255, 255, 255, 0.075);
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
 button:active {
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: rgba(255, 255, 255, 0.07);
 }
 
 button svg {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1rem;
+  height: 1rem;
   pointer-events: none;
 }
 
-button span {
+button svg + span {
   margin: 0 0.5rem;
   pointer-events: none;
 }
 
-@media screen and (min-width: 786px) {
-  html {
-    font-size: 24px;
-  }
+.hero-title {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.hero-title span {
+  margin-top: 0.25rem;
+  opacity: 0.65;
+}
+
+.footer {
+  position: fixed;
+  z-index: 30;
+  bottom: 1rem;
+  right: 1rem;
+  left: 1rem;
+  font-size: 0.5rem;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
 }

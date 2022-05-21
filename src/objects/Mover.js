@@ -12,7 +12,7 @@ export default class Mover {
     this.mouse = sk.createVector(0, 0);
     this.dir = sk.createVector(0, 0);
     this.maxSpeed = sk.random(9, 11);
-    this.color = sk.color(sk.random(255), sk.random(100), 50, 1);
+    this.color = sk.color(sk.random(255), sk.random(50, 100), 50, 1);
 
     const { innerWidth: width, innerHeight: height } = window;
     this.width = width;
