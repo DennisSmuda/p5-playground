@@ -1,5 +1,5 @@
-import SketchManager from "./src/utils/SketchManager";
-import UI from "./src/utils/UI";
+import SketchManager from "./src/SketchManager";
+import UI from "./src/UI";
 
 /**
  * Init Sketch Manager

@@ -1,6 +1,7 @@
 import { walkerSketch } from "./2-random-walker";
 import { moverSketch } from "./3-move-with-vectors";
 import { circleSketch } from "./4-scaling-circles";
+import { wavingCircleSketch } from "./5-waving-circles";
 
 /**
  * Sketch Definitions
@@ -23,6 +24,12 @@ const sketches = [
     description: "dynamic dot grid",
     instructions: "move your mouse around",
     sketch: circleSketch,
+  },
+  {
+    name: "waving circles",
+    description: "on a sine wave",
+    instructions: "",
+    sketch: wavingCircleSketch,
   },
 ];
 

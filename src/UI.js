@@ -1,5 +1,5 @@
-import { sketches } from "../sketches";
-import setTitle from "./setTitle";
+import { sketches } from "./sketches";
+import setTitle from "./utils/setTitle";
 
 /**
  * UI Class
