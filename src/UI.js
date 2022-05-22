@@ -1,5 +1,5 @@
 import { sketches } from "./sketches";
-import setTitle from "./utils/setTitle";
+import setHero from "./utils/setHero";
 
 /**
  * UI Class
@@ -47,7 +47,7 @@ export default class UI {
 
     // Click Event starts a sketch
     newButton.addEventListener("click", () => {
-      setTitle(sketch.name, sketch.instructions);
+      setHero(sketch.name, sketch.instructions, "", "sketch");
       window.dispatchEvent(
         new CustomEvent("startSketch", { detail: { sketch } })
       );
@@ -66,7 +66,7 @@ export default class UI {
   }
 
   resetTitle() {
-    setTitle("welcome", "choose a sketch");
+    setHero("welcome", "choose a sketch");
   }
 
   playLatest() {

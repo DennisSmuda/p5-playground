@@ -10,25 +10,25 @@ const sketches = [
   {
     name: "random walks",
     description: "noise-based pseudo-randomness",
-    instructions: "click to clear background",
+    instructions: "click/tap to clear",
     sketch: walkerSketch,
   },
   {
     name: "mouse attracts balls",
     description: "moving with vectors",
-    instructions: "move your mouse around",
+    instructions: "move/tap",
     sketch: moverSketch,
   },
   {
     name: "scaling circles",
     description: "dynamic dot grid",
-    instructions: "move your mouse around",
+    instructions: "move your mouse",
     sketch: circleSketch,
   },
   {
     name: "waving circles",
     description: "on a sine wave",
-    instructions: "",
+    instructions: "enjoy",
     sketch: wavingCircleSketch,
   },
 ];

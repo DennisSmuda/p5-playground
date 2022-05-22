@@ -7,7 +7,7 @@ import { getRandomColor } from "../utils/colors";
 export default class Circle {
   constructor(sk, x, y) {
     this.sk = sk;
-    this.scale = 1;
+    this.scale = 0;
     this.location = this.sk.createVector(x, y);
     this.color = getRandomColor(sk);
   }
