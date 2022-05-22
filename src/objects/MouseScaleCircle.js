@@ -16,7 +16,7 @@ export default class Circle {
     const { mouseX, mouseY } = this.sk;
     const mouse = this.sk.createVector(mouseX, mouseY);
     const distance = Vector.sub(mouse, this.location);
-    let targetScale = 500 / distance.mag() + 1;
+    let targetScale = 300 / distance.mag() + 0.001;
     if (targetScale > 32) {
       targetScale = 32;
     }
