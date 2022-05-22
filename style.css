@@ -34,10 +34,12 @@ html {
 h1 {
   letter-spacing: -1.5px;
   font-weight: 900;
+  text-shadow: 2px 2px #17141f;
 }
 
 a {
   color: inherit;
+  text-shadow: 1px 1px #17141f;
 }
 
 *,
@@ -49,6 +51,7 @@ a {
 
 p {
   opacity: 0.65;
+  text-shadow: 1px 1px #17141f;
 }
 
 canvas {
@@ -145,6 +148,7 @@ a.button span {
 }
 
 .play-button__name {
+  text-shadow: 2px 2px #17141f;
   font-size: 0.875rem;
   font-weight: 900;
   margin-bottom: 0.25rem;
@@ -191,6 +195,7 @@ button svg + span {
 .hero-title span {
   margin-top: 0.25rem;
   opacity: 0.65;
+  text-shadow: 2px 2px #17141f;
 }
 
 .footer {

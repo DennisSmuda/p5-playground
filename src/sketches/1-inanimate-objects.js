@@ -1,4 +1,4 @@
-import Circle from "../objects/Circle";
+import Circle from "../objects/MouseScaleCircle";
 
 let inanimateObjectsSketch = (sk) => {
   const objects = [];

@@ -16,6 +16,6 @@ const ui = new UI();
  *
  * https://stackoverflow.com/questions/12381563/how-can-i-stop-the-browser-back-button-using-javascript
  */
-window.onbeforeunload = function () {
-  return "You will leave this page!";
-};
+// window.onbeforeunload = function () {
+//   return "You will leave this page!";
+// };
